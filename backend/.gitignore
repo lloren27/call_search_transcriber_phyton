@@ -1,0 +1,45 @@
+# Entorno virtual
+venv/
+.env
+
+# Archivos de configuración y dependencias
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configuraciones de IDE y editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de logs
+*.log
+
+# Dependencias generadas
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.swp
+.DS_Store
+
+# Archivos de caché de LangChain, Whisper u otros
+cache/
+
+# Archivos de pruebas y resultados
+*.out
+*.pytest_cache/
+.tox/
+.coverage
+coverage.xml
+htmlcov/
+
+# Archivos específicos de Neo4J
+data/
+logs/

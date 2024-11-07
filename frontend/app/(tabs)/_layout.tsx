@@ -1,37 +1,16 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+// app/tabs/_layout.tsx
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Audios from "./audios";
+import Transcriptions from "./transcriptions";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+const Tab = createBottomTabNavigator();
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function RootLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
+    <Tab.Navigator>
+      <Tab.Screen name="Audios" component={Audios} />
+      <Tab.Screen name="Transcriptions" component={Transcriptions} />
+      {/* Puedes añadir más pestañas aquí si las necesitas */}
+    </Tab.Navigator>
   );
 }
